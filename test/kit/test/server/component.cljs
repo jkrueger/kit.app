@@ -2,7 +2,12 @@
   (:require
     [cljs.core.async :as async :refer (<!)]
     [kit.algo.pred :refer (eq?)]
-    [kit.server.component :refer (up down <up <down Lifecycle system with)]
+    [kit.server.component
+     :refer (Lifecycle
+             up down
+             <up <down
+             component
+             system)]
     [latte.chai :refer (expect)]
     [the.parsatron :as p])
   (:require-macros
@@ -84,7 +89,7 @@
     (up test-system-1
         (fn [system]
           (-> system
-              (get-in [:components :fruits])
+              (component :fruits)
               (check-flavors))
           (done))))
   
@@ -93,7 +98,7 @@
       (try
         (-> (<up test-system-1)
             (<?)
-            (get-in [:components :fruits])
+            (component :fruits)
             (check-flavors))
         (done)
         (catch js/Error e

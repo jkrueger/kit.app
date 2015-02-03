@@ -45,6 +45,12 @@
   ;; TODO: could check here if system was really started
   (<down component))
 
+(defn component [system k]
+  (get-in system [:components k]))
+
+(defn set-component [system k component]
+  (assoc-in system [:components k] component))
+
 (defn- change-states [<f nodes system next]
   (go
     (try
@@ -52,9 +58,9 @@
         (loop [nodes  nodes
                system system]
           (if-let [node (first nodes)]
-            (let [component (get-in system [:components node])
+            (let [component (component system node)
                   started   (<? (<f component system))
-                  system    (assoc-in system [:components node] started)]
+                  system    (set-component system node started)]
               (recur (rest nodes) system))
             system)))
       (catch js/Error e
