@@ -2,7 +2,7 @@
   (:require
     [cljs.core.async :as async :refer (<!)]
     [kit.algo.pred :refer (eq?)]
-    [kit.server.component
+    [kit.app.component
      :refer (Lifecycle
              up down
              <up <down

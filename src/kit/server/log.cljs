@@ -1,4 +1,4 @@
-(ns kit.server.log
+(ns kit.app.log
   (:require-macros
     [kit.core :refer (! ?)]))
 

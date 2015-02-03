@@ -1,4 +1,4 @@
-(ns kit.server.config
+(ns kit.app.config
   (:refer-clojure :exclude (get))
   (:require
     [clojure.string :as str]))

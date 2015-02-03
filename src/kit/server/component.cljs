@@ -1,4 +1,4 @@
-(ns kit.server.component
+(ns kit.app.component
   (:require
     [cljs.core.async :as async :refer (<!)]
     [kit.algo.graph :as graph]
