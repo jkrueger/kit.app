@@ -1,4 +1,4 @@
-(ns kit.test.server.component
+(ns kit.test.app.component
   (:require
     [cljs.core.async :as async :refer (<!)]
     [kit.algo.pred :refer (eq?)]
