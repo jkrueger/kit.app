@@ -1,4 +1,4 @@
 (ns kit.test
-  (:require [kit.test.server.component :as component]))
+  (:require [kit.test.app.component :as component]))
 
 (set! *main-cli-fn* (fn []))

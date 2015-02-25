@@ -66,8 +66,8 @@
       (catch js/Error e
         (next e)))))
 
-(def all-up   (partial change-states <node-up))
-(def all-down (partial change-states <node-down))
+(def all-up   (partial change-states <component-up))
+(def all-down (partial change-states <component-down))
 
 (defrecord System [components]
   Lifecycle
