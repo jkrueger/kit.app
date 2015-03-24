@@ -11,10 +11,26 @@
   (up [_ next])
   (down [_ next]))
 
-(defn up* [x f]
+(defn up*
+  "Calls up with x and a callback. If the callback gets called
+   with no arguments x is returned, otherwise the first argument
+   of the function.
+   The semantics are that x is a newly instantiated object, which
+   is the expected result of calling up. The callback function
+   may get handed an error object though. In this case the error
+   object is the result of the up operation"
+  [x f]
   (up x #(f (or %1 x))))
 
-(defn down* [x f]
+(defn down*
+  "Calls down with x and a callback. If the callback gets called
+   with no arguments x is returned, otherwise the first argument
+   of the function.
+   The semantics are that x is an existing object, which
+   is the expected result of calling down. The callback function
+   may get handed an error object though. In this case the error
+   object is the result of the down operation"
+  [x f]
   (down x #(f (or %1 x))))
 
 (def <up   (partial lift up*))
