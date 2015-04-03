@@ -1,0 +1,6 @@
+{
+ :git [['kit.core  "git@github.com:jkrueger/kit.core.git"  "feature/boot"]
+       ['kit.algo  "git@github.com:jkrueger/kit.algo.git"  "feature/boot"]
+       ['kit.async "git@github.com:jkrueger/kit.async.git" "feature/boot"]]
+ :jar []
+}
