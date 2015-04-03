@@ -29,6 +29,7 @@
         (.call log-fn logger msg))
       (throw (unknown-level level)))))
 
+(def trace (level-logger "trace" #(.-trace %)))
 (def debug (level-logger "debug" #(.-debug %)))
 (def info  (level-logger "info"  #(.-info %)))
 (def warn  (level-logger "warn"  #(.-warn %)))
