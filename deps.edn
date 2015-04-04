@@ -3,4 +3,6 @@
        [kit.algo  "git@github.com:jkrueger/kit.algo.git"  "feature/boot"]
        [kit.async "git@github.com:jkrueger/kit.async.git" "feature/boot"]]
  :jar []
+ :npm [[bunyan "1.2.3"]
+       [nconf  "0.6.9"]]
 }
